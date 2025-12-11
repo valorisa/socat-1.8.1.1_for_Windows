@@ -1,10 +1,10 @@
-# socat 1.8.0.3 Cygport for Windows
+# socat 1.8.1.0 Cygport for Windows
 
-This section provides a Cygport package for building and installing Socat 1.8.0.3 on Windows using Cygwin.
+This section provides a Cygport package for building and installing Socat 1.8.1.0 on Windows using Cygwin.
 
 ## Description
 
-Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer between two independent data channels. This project aims to simplify the process of building and installing Socat 1.8.0.3 on Windows systems using Cygwin and Cygport.
+Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer between two independent data channels. This project aims to simplify the process of building and installing Socat 1.8.1.0 on Windows systems using Cygwin and Cygport.
 
 ## Prerequisites
 
@@ -35,8 +35,8 @@ Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer 
 2. Clone this repository:
 
    ```console
-   git clone https://github.com/valorisa/socat_1.8.0.3-for-Windows.git
-   cd socat_1.8.0.3-for-Windows
+   git clone https://github.com/valorisa/socat_1.8.1.0-for-Windows.git
+   cd socat_1.8.1.0-for-Windows
    ```
 
 3. Build the package:
@@ -75,7 +75,7 @@ For more information on Socat usage, refer to the official documentation.
 
 ```bash
 NAME="socat"
-VERSION="1.8.0.3"
+VERSION="1.8.1.0"
 CATEGORY="net"
 SRC_URI="<http://www.dest-unreach.org/socat/download/${NAME}-${VERSION}.tar.gz>"
 HOMEPAGE="<http://www.dest-unreach.org/socat/>"
