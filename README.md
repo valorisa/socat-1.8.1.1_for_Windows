@@ -88,8 +88,13 @@ Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer 
    - Click "New" and add the path to the folder containing `socat.exe` (e.g., `C:\Program Files\socat`).
    - Click "OK" to close all windows.
 
+## Addendum 
+
+Otherwise for the others, there is one ready-made file 'socat-1.8.1.0.rar'. You can download it by going to : socat-1.8.1.0.rar and proceeding by keyboard shortcut (Ctrl + Shift + s).
+
 ## Conclusion
 
 You now have compiled `socat` version 1.8.1.0 under Windows 11 using Cygwin and obtained an executable `socat.exe`. You can use it directly from the Windows command line after adding its location to the PATH. This method provides maximum flexibility to adapt `socat` to your specific needs.
 
 This will help other users understand and follow the process clearly.
+
