@@ -1,36 +1,35 @@
 # syntax=docker/dockerfile:1
 
 ARG PYTHON_VERSION=3.14.2
-FROM python:${PYTHON_VERSION}-slim as base
+FROM python:${PYTHON_VERSION}-slim-bookworm AS base
 
-# Prévenir l'écriture des fichiers pyc
+# Avoid Python .pyc files and enable unbuffered output
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
-# Installer les outils nécessaires, y compris socat, curl, wget, et bash
+# System deps needed to build socat and Python packages
 RUN apt-get update && apt-get install -y \
     curl \
     wget \
     build-essential \
     libssl-dev \
-    socat \
     bash \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/*
 
-# Installer une version spécifique de socat (1.8.1.0)
+# Build and install socat 1.8.1.0 from official source
 ARG SOCAT_VERSION=1.8.1.0
-RUN wget http://www.dest-unreach.org/socat/download/socat-${SOCAT_VERSION}.tar.gz && \
-    tar -xzf socat-${SOCAT_VERSION}.tar.gz && \
-    cd socat-${SOCAT_VERSION} && \
-    ./configure && \
-    make && \
-    make install && \
-    cd .. && \
-    rm -rf socat-${SOCAT_VERSION} socat-${SOCAT_VERSION}.tar.gz
+RUN wget http://www.dest-unreach.org/socat/download/socat-${SOCAT_VERSION}.tar.gz \
+ && tar -xzf socat-${SOCAT_VERSION}.tar.gz \
+ && cd socat-${SOCAT_VERSION} \
+ && ./configure \
+ && make \
+ && make install \
+ && cd .. \
+ && rm -rf socat-${SOCAT_VERSION} socat-${SOCAT_VERSION}.tar.gz
 
-# Créer un utilisateur non privilégié 'valorisa' avec bash comme shell par défaut
+# Non‑root user for running the app
 ARG VALORISA_UID=10002
 RUN adduser \
     --disabled-password \
@@ -41,20 +40,19 @@ RUN adduser \
     --uid "${VALORISA_UID}" \
     valorisa
 
-# Copier le fichier requirements.txt et installer les dépendances Python
+# Python dependencies
 COPY requirements.txt .
 RUN --mount=type=cache,target=/root/.cache/pip \
     python -m pip install --no-cache-dir -r requirements.txt
 
-# Copier le code source de l'application
+# Application source
 COPY . .
 
-# Exposer le port utilisé par l'application
+# App port
 EXPOSE 8181
 
-# Par défaut, utiliser l'utilisateur root
-USER root
+# Run as non‑root user
+USER valorisa
 
-# Lancer l'application avec l'utilisateur 'valorisa'
-CMD ["bash", "-c", "exec su valorisa -c 'gunicorn socat.example:app --bind=0.0.0.0:8181'"]
-
+# Start gunicorn app
+CMD ["gunicorn", "socat.example:app", "--bind=0.0.0.0:8181"]
