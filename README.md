@@ -1,4 +1,4 @@
-# Compiling socat 1.8.0.3 on Windows 11 using Cygwin
+# Compiling socat 1.8.1.0 on Windows 11 using Cygwin
 
 ## Description
 
@@ -29,22 +29,22 @@ Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer 
 4. **Complete the Installation**:
    - Continue with the installation by following the instructions.
 
-## Step 2: Download socat Source Code (Version 1.8.0.3)
+## Step 2: Download socat Source Code (Version 1.8.1.0)
 
 1. Open a Cygwin terminal:
    - You can find a shortcut in the Start menu or run `C:\cygwin64\Cygwin.bat`.
 
-2. Download the socat source code (version 1.8.0.3):
+2. Download the socat source code (version 1.8.1.0):
 
    ```bash
-   wget http://www.dest-unreach.org/socat/download/socat-1.8.0.3.tar.gz
+   wget http://www.dest-unreach.org/socat/download/socat-1.8.1.0.tar.gz
    ```
 
 3. Extract the source code:
 
    ```bash
-   tar -xzf socat-1.8.0.3.tar.gz
-   cd socat-1.8.0.3
+   tar -xzf socat-1.8.1.0.tar.gz
+   cd socat-1.8.1.0
    ```
 
 ## Step 3: Compile socat
@@ -90,6 +90,6 @@ Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer 
 
 ## Conclusion
 
-You now have compiled `socat` version 1.8.0.3 under Windows 11 using Cygwin and obtained an executable `socat.exe`. You can use it directly from the Windows command line after adding its location to the PATH. This method provides maximum flexibility to adapt `socat` to your specific needs.
+You now have compiled `socat` version 1.8.1.0 under Windows 11 using Cygwin and obtained an executable `socat.exe`. You can use it directly from the Windows command line after adding its location to the PATH. This method provides maximum flexibility to adapt `socat` to your specific needs.
 
 This will help other users understand and follow the process clearly.
