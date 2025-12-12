@@ -5,7 +5,7 @@
 All commands below must be run from:
 
 ```text
-C:\Users\bbrod\Projets\socat-1.8.1.0\Install_from_dockerfile
+C:\Users\<your_username>\Projets\socat-1.8.1.0\Install_from_dockerfile
 ```
 
 This directory contains the `Dockerfile`, `requirements.txt` and the `socat/` package used by the image.
@@ -35,22 +35,22 @@ docker images socat-api
 
 Docker Hub account:  
 
-- `USER` = `eb33692e0225`  
+- `USER` = `your_Docker_ID`  
 - `REPO` = `socat-1.8.1.0`  
 
 Create tags for Docker Hub:
 
 ```powershell
-docker tag socat-api:1.8.1.0 eb33692e0225/socat-1.8.1.0:1.8.1.0
-docker tag socat-api:1.8.1.0 eb33692e0225/socat-1.8.1.0:latest
+docker tag socat-api:1.8.1.0 your_Docker_ID/socat-1.8.1.0:1.8.1.0
+docker tag socat-api:1.8.1.0 your_Docker_ID/socat-1.8.1.0:latest
 ```
 
 Here:
 
 - Full remote name with explicit version:  
-  `USER/REPO:TAG` = `eb33692e0225/socat-1.8.1.0:1.8.1.0`  
+  `USER/REPO:TAG` = `your_Docker_ID/socat-1.8.1.0:1.8.1.0`  
 - Full remote name with `latest`:  
-  `eb33692e0225/socat-1.8.1.0:latest`[1][2]
+  `your_Docker_ID/socat-1.8.1.0:latest`[1][2]
 
 ***
 
@@ -58,7 +58,7 @@ Here:
 
 ```powershell
 docker login
-# username: eb33692e0225
+# username: your_Docker_ID
 # single password or password and access token
 ```
 
@@ -68,12 +68,12 @@ docker login
 ## 4. Push tags to Docker Hub
 
 ```powershell
-docker push eb33692e0225/socat-1.8.1.0:1.8.1.0
-docker push eb33692e0225/socat-1.8.1.0:latest
+docker push your_Docker_ID/socat-1.8.1.0:1.8.1.0
+docker push your_Docker_ID/socat-1.8.1.0:latest
 ```
 
 After this, the Docker Hub repository  
-`https://hub.docker.com/r/eb33692e0225/socat-1.8.1.0`  
+`https://hub.docker.com/r/your_Docker_ID/socat-1.8.1.0`  
 shows the tags `1.8.1.0` and `latest` under the **Tags** tab.[3][4]
 
 ***
@@ -81,8 +81,8 @@ shows the tags `1.8.1.0` and `latest` under the **Tags** tab.[3][4]
 ## 5. Pull and run (from any machine)
 
 ```bash
-docker pull eb33692e0225/socat-1.8.1.0:1.8.1.0
-docker run --rm -p 8181:8181 --name socat-api eb33692e0225/socat-1.8.1.0:1.8.1.0
+docker pull your_Docker_ID/socat-1.8.1.0:1.8.1.0
+docker run --rm -p 8181:8181 --name socat-api your_Docker_ID/socat-1.8.1.0:1.8.1.0
 ```
 
 Then test:
