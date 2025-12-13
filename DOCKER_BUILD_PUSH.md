@@ -21,7 +21,7 @@ docker build -t socat-api:1.8.1.0 .
 - `NAME` = `socat-api`  
 - `TAG`  = `1.8.1.0`  
 
-This creates a local image `socat-api:1.8.1.0` based on `python:3.14.2-slim-bookworm` with socat 1.8.1.0 compiled inside. 
+This creates a local image `socat-api:1.8.1.0` based on `python:3.14.2-slim-bookworm` with socat 1.8.1.0 compiled inside.
 
 Check it:
 
@@ -50,7 +50,7 @@ Here:
 - Full remote name with explicit version:  
   `USER/REPO:TAG` = `your_Docker_ID/socat-1.8.1.0:1.8.1.0`  
 - Full remote name with `latest`:  
-  `your_Docker_ID/socat-1.8.1.0:latest`[1][2]
+  `your_Docker_ID/socat-1.8.1.0:latest` [[1](https://docs.docker.com/reference/cli/docker/image/push/), [2](https://docs.docker.com/get-started/docker-concepts/building-images/build-tag-and-publish-an-image/)]
 
 ***
 
@@ -61,7 +61,6 @@ docker login
 # username: your_Docker_ID
 # single password or password and access token
 ```
-
 
 ***
 
@@ -74,7 +73,7 @@ docker push your_Docker_ID/socat-1.8.1.0:latest
 
 After this, the Docker Hub repository  
 `https://hub.docker.com/r/your_Docker_ID/socat-1.8.1.0`  
-shows the tags `1.8.1.0` and `latest` under the **Tags** tab.[3][4]
+shows the tags `1.8.1.0` and `latest` under the **Tags** tab. [[3](https://docs.docker.com/docker-hub/repos/manage/hub-images/tags/), [4](https://docs.docker.com/get-started/introduction/build-and-push-first-image/)]
 
 ***
 
@@ -91,8 +90,3 @@ Then test:
 curl http://127.0.0.1:8181/
 # expected: "socat 1.8.1.0 Docker demo"
 ```
-
-[1](https://docs.docker.com/reference/cli/docker/image/push/)
-[2](https://docs.docker.com/get-started/docker-concepts/building-images/build-tag-and-publish-an-image/)
-[3](https://docs.docker.com/docker-hub/repos/manage/hub-images/tags/)
-[4](https://docs.docker.com/get-started/introduction/build-and-push-first-image/)
