@@ -59,7 +59,7 @@ Here:
 ```powershell
 docker login
 # username: your_Docker_ID
-# single password or password and access token
+# password or access token
 ```
 
 ***
