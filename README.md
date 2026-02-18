@@ -2,7 +2,7 @@
 
 ## Description
 
-Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer between two independent data channels.  Each channel may be a file, pipe, device (serial line etc. or a pseudo terminal), socket (UNIX, IP4, IP6, raw, UDP, TCP), TLS socket, proxy CONNECT connection, file descriptor (stdin etc.), the GNU line editor (readline), a program, or a combination of two of those. These modes include generation of 'listening' sockets, named pipes, and pseudo terminals. This project aims to simplify the process of building and installing Socat 1.8.0.3 on Windows systems using Cygwin.
+Socat (SOcket CAT) is a multipurpose relay tool for bidirectional data transfer between two independent data channels.  Each channel may be a file, pipe, device (serial line etc. or a pseudo terminal), socket (UNIX, IP4, IP6, raw, UDP, TCP), TLS socket, proxy CONNECT connection, file descriptor (stdin etc.), the GNU line editor (readline), a program, or a combination of two of those. These modes include generation of 'listening' sockets, named pipes, and pseudo terminals. This project aims to simplify the process of building and installing Socat 1.8.1.1 on Windows systems using Cygwin.
 
 ## Step 1: Install Cygwin
 
