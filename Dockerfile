@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-ARG PYTHON_VERSION=3.14.2
+ARG PYTHON_VERSION=3.14.3
 FROM python:${PYTHON_VERSION}-slim-bookworm AS base
 
 # Avoid Python .pyc files and enable unbuffered output
@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y \
     bash \
  && rm -rf /var/lib/apt/lists/*
 
-# Build and install socat 1.8.1.0 from official source
-ARG SOCAT_VERSION=1.8.1.0
+# Build and install socat 1.8.1.1 from official source
+ARG SOCAT_VERSION=1.8.1.1
 RUN wget http://www.dest-unreach.org/socat/download/socat-${SOCAT_VERSION}.tar.gz \
  && tar -xzf socat-${SOCAT_VERSION}.tar.gz \
  && cd socat-${SOCAT_VERSION} \
