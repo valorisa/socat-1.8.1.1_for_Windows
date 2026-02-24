@@ -1,24 +1,8 @@
-<think>The user wants me to create a professional "runbook" style document with:
-1. Flow diagrams (ASCII)
-2. Client test commands for each example
-3. A troubleshooting section
-4. Homogeneous guide style
-
-I'll restructure all 20 examples in a professional runbook format with:
-- Clear headers
-- ASCII flow diagrams showing data flow
-- Server command
-- Client/test command
-- Expected output/behavior
-- Common issues for each
-
-Then a general troubleshooting section at the end.
-
-This will be a long document but the user specifically asked for it. I'll make it clean, professional markdown.</think># Runbook `socat` — 20 cas d'usage professionnels
+# Runbook `socat` — 20 cas d'usage professionnels
 
 **Version :** 1.0  
 **Compatibilité :** Linux / macOS / Windows 11 (WSL2)  
-**Dernière mise à jour :** Février 2025
+**Dernière mise à jour :** Février 2026
 
 ---
 
