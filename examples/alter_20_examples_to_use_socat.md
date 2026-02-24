@@ -1,48 +1,4 @@
-<think>
-**Clarifying user request**
-
-It looks like the user is asking me to combine my 10 examples with another set they have, as they mentioned "avec ceux qui suivent." That suggests they want me to merge my own examples with theirs to create a total of 20 unique ones.
-
-Since I initially gave them 10 examples and they seem to have more in a PDF, I should ensure I include those 10 from their PDF to fulfill their request effectively.
-
-**Creating examples for the user**
-
-I need to generate 20 examples without asking for clarification. The first 10 should come from the PDF, professionally reworked for cross-platform usage, while the next 10 will be advanced examples from my list.
-
-I must avoid potentially dangerous content, like reverse shells. I could improve the original PDF content about creating SSH tunnels, using `ssh user@remote_server nc`. It's crucial to keep it all in pure markdown, including installation notes, especially for Windows by using WSL2. Each example should have a clear heading, commands, explanations, practical usage, and tests. I'll keep the user's preferences in mind throughout!
-
-**Ensuring originality in examples**
-
-I need to ensure that my examples are original and not trivial. I can add useful constraints like `range=`, `so-` options, logging, and others, while ensuring they work across platforms, especially in WSL.
-
-I'll include advanced features but keep in mind that some, like `TUN`, may require special privileges on macOS. It's crucial that everything functions on all three platforms, with WSL2 being the simplest option for Windows. 
-
-I’ll also think about including SOCKS proxy chaining, port knocking, and examples like HTTP CONNECT through corporate proxies. Let's work on crafting a solid set of 20 examples!
-
-**Creating TCP examples**
-
-I’m focusing on a few examples related to TCP features, making sure they're safe and functional. For instance, I could set up a TCP redirect with options like allowlist, logging, and reuseaddr. 
-
-I want to create a simple TCP server that echoes commands like "whoami" or "date" while ensuring it’s secure. For file transfers, I’ll use atomic write techniques and handle permissions properly.
-
-I'll also implement SSH tunneling using socat along with SSH commands to forward ports securely. Lastly, I plan to redirect UDP ports, particularly for DNS, utilizing appropriate flags and options for usability.
-
-**Developing unique examples**
-
-I’m crafting several technical examples, focusing on various networking functionalities. First, I need to create a simple HTTP proxy and define an HTTP CONNECT relay for debugging, using socat. 
-
-Next, I’ll consider file operations, like appending and handling CRLF conversions, along with showing how to split output to both a file and stdout using tee. I want to develop improved chat server functionality with a multi-client capability using named pipes.
-
-In creating a total of 20 unique examples, I’ll ensure that my advanced examples blend seamlessly with new professional applications while keeping security considerations and clear documentation in mind.
-
-**Crafting technical examples**
-
-I’m planning to create a set of 20 technical examples with concise explanations. I’ll include testing commands using `socat` and `curl`, sticking to those that are widely available. Each example will serve a specific purpose, like a TCP relay with an allowlist for secure access and a TCP "banner + protocol guard" to prevent abuse.
-
-For file transfers, I'll look into on-the-fly compression, and I plan to showcase a variety of use cases, such as an SSH tunnel or a UDP to TCP gateway for syslog collection. Each example will feature a clear command structure, objectives, and key points to ensure clarity.
-
-I'll also ensure the layout maintains cross-platform compatibility, particularly mentioning Windows 11 users through WSL2, and include all necessary installation notes.
-</think># 20 exemples **professionnels, approfondis et réellement utiles** avec `socat` (Linux / macOS / Windows 11)
+# 20 exemples **professionnels, approfondis et réellement utiles** avec `socat` (Linux / macOS / Windows 11)
 
 > **Compatibilité OS (important)**  
 > `socat` est natif sur **Linux** et **macOS**. Sur **Windows 11**, le chemin le plus fiable pour une compatibilité “100% socat” est **WSL2** (Ubuntu/Debian, etc.).  
@@ -359,4 +315,3 @@ time dd if=/dev/zero bs=1m count=512 2>/dev/null | socat - TCP:IP_SERVEUR:9000,c
 - **Résilience** : ajoutez `connect-timeout=...`, `-T ...`, `keepalive`, `max-children=...`, et des logs (`-lf`, `-d -d`) pour diagnostiquer vite.
 - **Debug** : `-v -x` est excellent pour comprendre un protocole ou une panne côté applicatif.
 
-Si vous voulez une version “document prête à livrer” (avec schémas de flux, commandes de test client pour chaque exemple, et une section *troubleshooting*), je peux reformater ces 20 exemples dans un style guide homogène (type runbook).
